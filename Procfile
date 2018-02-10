@@ -1,0 +1,1 @@
+web: gunicorn encuesta_celmi.wsgi 
