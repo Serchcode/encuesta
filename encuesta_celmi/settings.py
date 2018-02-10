@@ -25,7 +25,7 @@ SECRET_KEY = ')w_^6g2n%dk8p_)h9#k!=pq4sz6)yvg-5ja-+p1((f*j&vbxkz'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -49,6 +49,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'encuesta_celmi.urls'
@@ -121,9 +122,8 @@ USE_TZ = True
 STATIC_ROOT = 'staticfiles'
 STATIC_URL = '/static/'
 STATICFILES_DIRS=(os.path.join(BASE_DIR,"static"),)
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 #STATIC_ROOT = os.path.join(BASE_DIR,"static/")
 MEDIA_ROOT = os.path.join(BASE_DIR,'media').replace('\\', '/')
 MEDIA_URL = '/media/'
