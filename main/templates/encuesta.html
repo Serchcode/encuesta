@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+	<title>Encuesta</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <script
+  	src="http://code.jquery.com/jquery-3.3.1.js"
+  	integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  	crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{%static 'css/styles.css'%}">
+</head>
+<body>
+    <style type="text/css">
+
+    h2{
+    	font-size: 24px;
+		color: #000;
+		font-family: 'Raleway', sans-serif;
+		font-weight: 800;
+    }
+
+    h5{
+    	font-family: 'Raleway', sans-serif;
+		color: #a5a5a5;
+		font-size: 14px;
+		line-height: 1.42857143;
+    }
+    p{
+    	font-size: 18px;
+		color: #a5a5a5;
+		font-family: 'Raleway', sans-serif;
+		font-weight: 800;
+    }
+
+	.rating{
+		background: transparent;
+		border: 3px solid #e2e2e2;
+		border-radius: 18px;
+		width: 700px;
+		height: 480px;
+	}
+
+	.rating ul{
+		list-style: none;
+		display: flex;
+		justify-content: center;
+	}
+
+	.rating ul li{
+		position: center;
+	}
+
+
+	textarea{
+		width: 50% or 350px;
+		background-color: #f7f7f7;
+		height: 55px;
+		border: 2px solid #d3d3d3;
+		border-radius: 12px;
+	}
+	
+	textarea:focus{
+		outline:0px;
+	}
+
+
+	input[type="submit" i], input[type="reset" i], input[type="file" i]::-webkit-file-upload-button, button {
+	padding: 1px 6px;
+	width: 130px;
+	height: 58px;
+	border-radius:12px;
+	background: #00bed0; /* For browsers that do not support gradients */
+	background: -webkit-linear-gradient(294deg, #0084bc, #00bed0);
+	background: -o-linear-gradient(294deg, #0084bc, #00bed0);
+	background: linear-gradient(24deg, #0084bc, #00bed0);
+	color: white;
+	font-size: 24px;
+	color: #fff;
+	font-family: 'Raleway', sans-serif;
+	font-weight: 800;
+	}
+
+	input[type=checkbox].default{display:inline-block!important;margin-left: 15px;}
+	/**************************************/
+	/* Checkboxes sprite background image */
+	/**************************************/
+
+	div.rating ul li input[type=checkbox]{display:none;}
+	 
+	input[type=checkbox] + label.check{
+	    display:inline-block;
+	    cursor: pointer;  
+	    outline: 0;  
+	    width: 50px;
+	    height: 50px;
+		background-image: url("static/media/icons8-facebook-like-50.png");
+	    background-repeat: no-repeat;	
+	    background-position: 0 0;    
+	    margin-right: 25px;
+	    text-align: center;
+	    font-weight: bold;
+	}
+ 
+	div.rating ul li input[type=checkbox]:checked + label.check{
+		background-image: url("static/media/icons8-facebook-like-51.png");
+	}	
+
+	div.rating ul li input[type=checkbox] + label.check:hover{
+		background-image: url("static/media/icons8-facebook-like-51.png");
+	}	
+	
+	input[type=radio].default {display:inline-block!important;margin-left: 15px;}
+	/**************************************/
+	/* radio sprite background image */
+	/**************************************/
+
+	div.rating ul li:first-child input[type=radio] {display:none;}
+	 
+	div.rating ul li:first-child input[type=radio] + label.check{
+	    display:inline-block;
+	    cursor: pointer;  
+	    outline: 0;  
+	    width: 50px;
+	    height: 50px;
+		background-image: url("static/media/feliz1.png");
+	    background-repeat: no-repeat;	
+	    background-position: 0 0;    
+	    margin-right: 25px;
+	    text-align: center;
+	    font-weight: bold;
+	}
+ 
+	div.rating ul li:first-child input[type=radio]:checked + label.check{
+		background-image: url("static/media/feliz2.png");
+	}	
+
+	div.rating ul li:nth-child(2) input[type=radio] {display:none;}
+	 
+	div.rating ul li:nth-child(2) input[type=radio] + label.check{
+	    display:inline-block;
+	    cursor: pointer;  
+	    outline: 0;  
+	    width: 50px;
+	    height: 50px;
+		background-image: url("static/media/sad.png");
+	    background-repeat: no-repeat;	
+	    background-position: 0 0;    
+	    margin-right: 25px;
+	    text-align: center;
+	    font-weight: bold;
+	}
+ 
+	div.rating ul li:nth-child(2) input[type=radio]:checked + label.check{
+		background-image: url("static/media/sad2.png");
+	}	
+
+
+	
+
+    </style>
+
+	<div class="container">
+		<center>
+			<h2><strong>!CALIFICA A VISION PRO¡</strong></h2>
+			<h5>Para nosotros es muy importante conocer tu opinión, ya que nos ayuda a ofrecerte un smartphone justo como lo deseas.</h5>
+			<form action="" method="post">
+			{% csrf_token %}
+	    		<div class="container rating">
+	  			<p>1. ¿Te gustan las características del equipo?</p>
+	  				<ul>
+	    			{% for checkbox in form.like %}	    			
+	    					<li>
+		    					{{checkbox.tag}}
+		    					<label class="check" for="{{ checkbox.id_for_label }}"></label>
+		    				</li>
+	    			{% endfor %}
+	    			</ul>
+	    			<p>2. ¿Cómo calificarías su diseño?</p>
+	    			<ul>
+	    				{% for checkbox in form.design %}
+	    				<li>
+	    					{{checkbox.tag}}
+	    					<label class="check" for="{{checkbox.id_for_label}}"></label>
+	    				</li>
+	    				{% endfor %}
+	    			</ul>
+	    			<p>3. ¿Qué es lo que más te gusta?</p>
+	    			{{form.more_like}}
+	    			<p>4. ¿Qué te parece su precio? ($2,899.00)</p>
+	    			<ul>
+	    			{% for radio in form.price %}
+	    				<li>
+	    					{{radio.tag}}
+	    					<label class="check" for="{{ radio.id_for_label }}"></label>
+	    				</li>
+	    			{% endfor %}
+	    			</ul>
+	    			<input type="submit" value="Enviar"/>
+	    		</div>
+	    	</form>
+	    </center>
+	</div>
+<script>
+$( "" ).last().addClass( "selected" );
+</script>
+</body>
+</html>
